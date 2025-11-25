@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="game-bg">
+  <main class="container">
+    <header class="header">
+      <h1>Memory Game</h1>
+      <div class="controls">
+        <label>Time:
+          <select id="timeSelect">
+            <option value="60">1:00</option>
+            <option value="90">1:30</option>
+            <option value="120" selected>2:00</option>
+            <option value="180">3:00</option>
+          </select>
+        </label>
+        <button id="restartBtn">Restart</button>
+        <button id="muteBtn" aria-pressed="false" title="Mute / unmute music">🔊</button>
+      </div>
+    </header>
+
+    <section class="status">
+      <div class="status-item">Time: <span id="timer">02:00</span></div>
+      <div class="status-item">Score: <span id="score">0</span></div>
+      <div class="status-item">Matches: <span id="matches">0</span></div>
+    </section>
+
+    <section id="board" class="board" aria-live="polite"></section>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="modal" role="dialog" aria-modal="true">
+        <h2 id="resultTitle">Time's up!</h2>
+        <p id="resultText">Your score: <strong id="finalScore">0</strong></p>
+        <button id="playAgain">Play again</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- victory decorative layers inserted by CSS when .victory is active -->
+  <div class="rays" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

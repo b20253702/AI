@@ -1,5 +1,4 @@
 
-import java.util.Scanner;
 
 public class Hangman {
     private static final int MAX_TRIES = 6; // Maximum number of incorrect guesses
